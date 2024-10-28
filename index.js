@@ -776,8 +776,9 @@ function trimRegExpStartAndEnd (regexString) {
     regexString = regexString.slice(0, 1) + regexString.slice(2)
   }
 
-  if (regexString.charCodeAt(regexString.length - 2) === 36) {
-    regexString = regexString.slice(0, regexString.length - 2) + regexString.slice(regexString.length - 1)
+  const regexStringLength = regexString.length
+  if (regexString.charCodeAt(regexStringLength - 2) === 36) {
+    regexString = regexString.slice(0, regexStringLength - 2) + regexString.slice(regexStringLength - 1)
   }
 
   return regexString
