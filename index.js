@@ -794,15 +794,17 @@ function getClosingParenthensePosition (path, idx) {
   while (idx < path.length) {
     idx++
 
+    const currentChar = path[idx]
+
     // ignore skipped chars
-    if (path[idx] === '\\') {
+    if (currentChar === '\\') {
       idx++
       continue
     }
 
-    if (path[idx] === ')') {
+    if (currentChar === ')') {
       parentheses--
-    } else if (path[idx] === '(') {
+    } else if (currentChar === '(') {
       parentheses++
     }
 
